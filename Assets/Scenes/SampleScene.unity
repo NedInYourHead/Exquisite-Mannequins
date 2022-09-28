@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 301796399}
   - component: {fileID: 301796398}
   - component: {fileID: 301796400}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: ContainerBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,6 +326,7 @@ GameObject:
   - component: {fileID: 1393107710}
   - component: {fileID: 1393107709}
   - component: {fileID: 1393107711}
+  - component: {fileID: 1393107712}
   m_Layer: 0
   m_Name: Joe
   m_TagString: Untagged
@@ -424,6 +425,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1393107712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393107708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62fab55c657b5ad45bb55276a73ba933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1619774842
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,7 +514,7 @@ Transform:
   m_GameObject: {fileID: 1619774842}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.6, y: -7.6, z: -50}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -584,7 +597,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666933937}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 1.7, z: -4.36}
+  m_LocalPosition: {x: -1.13, y: 1.57, z: -3.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -625,7 +638,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1666933937}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b7f9db23ea618b429700dd3b794aa67, type: 3}
+  m_Script: {fileID: 11500000, guid: 62fab55c657b5ad45bb55276a73ba933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1705492708
@@ -674,7 +687,7 @@ MonoBehaviour:
   currentObjectSelected: {fileID: 0}
   selectableLayers:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 64
 --- !u!1 &2117984885
 GameObject:
   m_ObjectHideFlags: 0
