@@ -6,6 +6,8 @@ using UnityEngine.Events;
 public class Button : GenericInteractable
 {
     private SpriteRenderer spriteRenderer;
+    private Color deactivatedColour;
+    [SerializeField] private Color activatedColour;
     [SerializeField] private UnityEvent OnClick;
 
     protected override void Awake()
@@ -13,45 +15,37 @@ public class Button : GenericInteractable
         base.Awake();
 
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        spriteRenderer.color = Color.white;
     }
 
     public override void Pressed(Vector2 position)
     {
-        spriteRenderer.color = Color.red;
+        deactivatedColour = spriteRenderer.color;
+        spriteRenderer.color = activatedColour;
     }
 
     public override void UpdateFingerPosition(Vector2 position)
     {
         if (Physics2D.Raycast(position, Vector2.zero, Mathf.Infinity, 1 << 7))
         {
-            spriteRenderer.color = Color.red;
+            spriteRenderer.color = activatedColour;
         }
         else
         {
-            spriteRenderer.color = Color.white;
+            spriteRenderer.color = deactivatedColour;
         }
     }
 
     public override void Released(Vector2 position)
     {
-        spriteRenderer.color = Color.white;
         if (Physics2D.Raycast(position, Vector2.zero, Mathf.Infinity, 1 << 7))
         {
             OnClick.Invoke();
         }
+        spriteRenderer.color = deactivatedColour;
     }
 
     public void DebugEvent()
     {
         Debug.Log("Button " + name + " Activated");
-        StartCoroutine(Activate());
-    }
-
-    IEnumerator Activate()
-    {
-        spriteRenderer.color = Color.green;
-        yield return new WaitForSeconds(3);
-        spriteRenderer.color = Color.white;
     }
 }

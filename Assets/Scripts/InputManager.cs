@@ -32,7 +32,7 @@ public class InputManager : MonoBehaviour
 
     void Awake()
     {
-        debugFingerTransform = GameObject.Find("DebugFingerPosition").transform;
+        //debugFingerTransform = GameObject.Find("DebugFingerPosition").transform;
         mainCam = Camera.main;
         controls = new Controls();
         controls.Playmode.TouchPress.started += ctx => TouchStarted();
@@ -97,6 +97,6 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
-        debugFingerTransform.position = new Vector3(fingerPosition.x, fingerPosition.y, -49f);
+        //debugFingerTransform.position = new Vector3(fingerPosition.x, fingerPosition.y, -49f);
     }
 }
