@@ -14,12 +14,12 @@ public class InputManager : MonoBehaviour
         {
             if (currentObjectSelected != null)
             {
-                currentObjectSelected.gameObject.layer = 0;
+                currentObjectSelected.gameObject.layer = 6;
             }
             currentObjectSelected = value;
             if (currentObjectSelected != null)
             {
-                currentObjectSelected.gameObject.layer = 6;
+                currentObjectSelected.gameObject.layer = 7;
             }
         }
     }
@@ -52,7 +52,6 @@ public class InputManager : MonoBehaviour
 
     private void TouchStarted()
     {
-        Debug.Log("Started at " + fingerPosition.ToString());
 
         objectsTouched = Physics2D.RaycastAll(fingerPosition, Vector2.zero, Mathf.Infinity, selectableLayers);
 
@@ -70,7 +69,6 @@ public class InputManager : MonoBehaviour
         if (closestTransform != null)
         {
             CurrentObjectSelected = closestTransform.gameObject.GetComponent<GenericInteractable>();
-            Debug.Log(CurrentObjectSelected.name);
         }
         if (CurrentObjectSelected != null)
         {
@@ -95,7 +93,6 @@ public class InputManager : MonoBehaviour
             CurrentObjectSelected.Released(fingerPosition);
         }
         CurrentObjectSelected = null;
-        Debug.Log("Released at " + fingerPosition.ToString());
     }
 
     private void Update()
