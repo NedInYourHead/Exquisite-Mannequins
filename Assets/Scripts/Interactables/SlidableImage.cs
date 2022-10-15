@@ -7,6 +7,7 @@ public class SlidableImage : GenericInteractable
 {
     private float startXTransform;
     private float startXFinger;
+    [SerializeField] private float slideMultiplier;
 
     protected override void Awake()
     {
@@ -21,7 +22,7 @@ public class SlidableImage : GenericInteractable
 
     public override void UpdateFingerPosition(Vector2 position)
     {
-        transform.position = new Vector3(startXTransform + ((position.x - startXFinger)*1.5f), transform.position.y, transform.position.z);
+        transform.position = new Vector3(startXTransform + ((position.x - startXFinger)*slideMultiplier), transform.position.y, transform.position.z);
     }
 
     public override void Released(Vector2 position)

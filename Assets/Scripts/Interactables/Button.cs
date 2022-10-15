@@ -8,6 +8,7 @@ public class Button : GenericInteractable
     private SpriteRenderer spriteRenderer;
     private Color deactivatedColour;
     [SerializeField] private Color activatedColour;
+    [SerializeField] private bool changeColourOnActivation;
     [SerializeField] private UnityEvent OnClick;
 
     protected override void Awake()
@@ -20,14 +21,20 @@ public class Button : GenericInteractable
     public override void Pressed(Vector2 position)
     {
         deactivatedColour = spriteRenderer.color;
-        spriteRenderer.color = activatedColour;
+        if (changeColourOnActivation)
+        {
+            spriteRenderer.color = activatedColour;
+        }
     }
 
     public override void UpdateFingerPosition(Vector2 position)
     {
         if (Physics2D.Raycast(position, Vector2.zero, Mathf.Infinity, 1 << 7))
         {
-            spriteRenderer.color = activatedColour;
+            if (changeColourOnActivation)
+            {
+                spriteRenderer.color = activatedColour;
+            }
         }
         else
         {

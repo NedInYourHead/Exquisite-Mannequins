@@ -14,14 +14,14 @@ public class OriginReset : MonoBehaviour
     }
     private void Update()
     {
-        if (transform.position.x > 14.4f)
+        if (transform.position.x > 19.1f)
         {
-            transform.position = new Vector3(transform.position.x - textureUnitSizeX, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x - 38f, transform.position.y, transform.position.z);
         }
 
-        if (transform.position.x < -15f)
+        if (transform.position.x < -19.1f)
         {
-            transform.position = new Vector3(transform.position.x + textureUnitSizeX, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + 38f, transform.position.y, transform.position.z);
         }
     }
 }
