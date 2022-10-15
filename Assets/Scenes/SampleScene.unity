@@ -506,6 +506,7 @@ GameObject:
   - component: {fileID: 134203580}
   - component: {fileID: 134203579}
   - component: {fileID: 134203578}
+  - component: {fileID: 134203581}
   m_Layer: 0
   m_Name: 1FingerUp
   m_TagString: Untagged
@@ -543,7 +544,19 @@ MonoBehaviour:
   changeColourOnActivation: 1
   OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 134203581}
+        m_TargetAssemblyTypeName: ColourPuzzle, Assembly-CSharp
+        m_MethodName: ChangeColour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &134203579
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -621,6 +634,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &134203581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134203576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab9d48dfa8d445468736ca279bab0d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  correctColourIndex: 0
 --- !u!1 &386811060
 GameObject:
   m_ObjectHideFlags: 0
@@ -1408,7 +1434,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1008879819
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1555,6 +1581,7 @@ GameObject:
   - component: {fileID: 1144166163}
   - component: {fileID: 1144166162}
   - component: {fileID: 1144166161}
+  - component: {fileID: 1144166164}
   m_Layer: 0
   m_Name: 2FingersUp
   m_TagString: Untagged
@@ -1592,7 +1619,19 @@ MonoBehaviour:
   changeColourOnActivation: 1
   OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1144166164}
+        m_TargetAssemblyTypeName: ColourPuzzle, Assembly-CSharp
+        m_MethodName: ChangeColour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &1144166162
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1670,6 +1709,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1144166164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144166159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab9d48dfa8d445468736ca279bab0d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  correctColourIndex: 0
 --- !u!1 &1185276402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1688,7 +1740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1185276403
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2192,6 +2244,7 @@ GameObject:
   - component: {fileID: 1677183036}
   - component: {fileID: 1677183035}
   - component: {fileID: 1677183034}
+  - component: {fileID: 1677183037}
   m_Layer: 0
   m_Name: 4FingersUp
   m_TagString: Untagged
@@ -2229,7 +2282,19 @@ MonoBehaviour:
   changeColourOnActivation: 1
   OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1677183037}
+        m_TargetAssemblyTypeName: ColourPuzzle, Assembly-CSharp
+        m_MethodName: ChangeColour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &1677183035
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2307,6 +2372,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1677183037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677183032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab9d48dfa8d445468736ca279bab0d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  correctColourIndex: 0
 --- !u!1 &1705492708
 GameObject:
   m_ObjectHideFlags: 0
@@ -2673,6 +2751,7 @@ GameObject:
   - component: {fileID: 2014536024}
   - component: {fileID: 2014536027}
   - component: {fileID: 2014536025}
+  - component: {fileID: 2014536028}
   - component: {fileID: 2014536026}
   m_Layer: 0
   m_Name: 3FingersUp
@@ -2711,7 +2790,19 @@ MonoBehaviour:
   changeColourOnActivation: 1
   OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2014536028}
+        m_TargetAssemblyTypeName: ColourPuzzle, Assembly-CSharp
+        m_MethodName: ChangeColour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &2014536026
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2789,6 +2880,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2014536028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014536023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab9d48dfa8d445468736ca279bab0d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  correctColourIndex: 0
 --- !u!1 &2087777038
 GameObject:
   m_ObjectHideFlags: 0

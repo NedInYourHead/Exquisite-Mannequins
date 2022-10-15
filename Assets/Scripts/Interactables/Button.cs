@@ -29,16 +29,16 @@ public class Button : GenericInteractable
 
     public override void UpdateFingerPosition(Vector2 position)
     {
-        if (Physics2D.Raycast(position, Vector2.zero, Mathf.Infinity, 1 << 7))
+        if (changeColourOnActivation)
         {
-            if (changeColourOnActivation)
+            if (Physics2D.Raycast(position, Vector2.zero, Mathf.Infinity, 1 << 7))
             {
                 spriteRenderer.color = activatedColour;
             }
-        }
-        else
-        {
-            spriteRenderer.color = deactivatedColour;
+            else
+            {
+                spriteRenderer.color = deactivatedColour;
+            }
         }
     }
 
@@ -48,7 +48,10 @@ public class Button : GenericInteractable
         {
             OnClick.Invoke();
         }
-        spriteRenderer.color = deactivatedColour;
+        if (changeColourOnActivation)
+        {
+            spriteRenderer.color = deactivatedColour;
+        }
     }
 
     public void DebugEvent()
