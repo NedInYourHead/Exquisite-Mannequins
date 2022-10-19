@@ -4,24 +4,23 @@ using UnityEngine;
 
 public class OriginReset : MonoBehaviour
 {
-    private float textureUnitSizeX;
+    [SerializeField] private float loopPosition;
 
     private void Awake()
     {
         Sprite sprite = GetComponent<SpriteRenderer>().sprite;
         Texture2D texture = sprite.texture;
-        textureUnitSizeX = texture.width / sprite.pixelsPerUnit;
     }
     private void Update()
     {
-        if (transform.position.x > 19.1f)
+        if (transform.position.x > loopPosition)
         {
-            transform.position = new Vector3(transform.position.x - 38f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x - (loopPosition * 2), transform.position.y, transform.position.z);
         }
 
-        if (transform.position.x < -19.1f)
+        if (transform.position.x < -loopPosition)
         {
-            transform.position = new Vector3(transform.position.x + 38f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + (loopPosition*2), transform.position.y, transform.position.z);
         }
     }
 }

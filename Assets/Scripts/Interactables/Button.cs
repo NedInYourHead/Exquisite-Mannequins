@@ -20,22 +20,25 @@ public class Button : GenericInteractable
 
     public override void Pressed(Vector2 position)
     {
-        deactivatedColour = spriteRenderer.color;
         if (changeColourOnActivation)
         {
+            deactivatedColour = spriteRenderer.color;
             spriteRenderer.color = activatedColour;
         }
     }
 
     public override void UpdateFingerPosition(Vector2 position)
     {
-        if (changeColourOnActivation)
+        if (Physics2D.Raycast(position, Vector2.zero, Mathf.Infinity, 1 << 7))
         {
-            if (Physics2D.Raycast(position, Vector2.zero, Mathf.Infinity, 1 << 7))
+            if (changeColourOnActivation)
             {
                 spriteRenderer.color = activatedColour;
             }
-            else
+        }
+        else
+        {
+            if (changeColourOnActivation)
             {
                 spriteRenderer.color = deactivatedColour;
             }
@@ -44,13 +47,13 @@ public class Button : GenericInteractable
 
     public override void Released(Vector2 position)
     {
-        if (Physics2D.Raycast(position, Vector2.zero, Mathf.Infinity, 1 << 7))
-        {
-            OnClick.Invoke();
-        }
         if (changeColourOnActivation)
         {
             spriteRenderer.color = deactivatedColour;
+        }
+        if (Physics2D.Raycast(position, Vector2.zero, Mathf.Infinity, 1 << 7))
+        {
+            OnClick.Invoke();
         }
     }
 

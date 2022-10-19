@@ -15,7 +15,6 @@ public class ColourPuzzle : MonoBehaviour
         {
             currentColour = value;
             spriteRenderer.color = colours[value];
-            Debug.Log(spriteRenderer.color.ToString());
         }
     }
 
