@@ -574,7 +574,6 @@ GameObject:
   - component: {fileID: 134203580}
   - component: {fileID: 134203579}
   - component: {fileID: 134203578}
-  - component: {fileID: 134203581}
   m_Layer: 0
   m_Name: 1FingerUp
   m_TagString: Untagged
@@ -613,10 +612,10 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 134203581}
-        m_TargetAssemblyTypeName: ColourPuzzle, Assembly-CSharp
+      - m_Target: {fileID: 1416841732}
+        m_TargetAssemblyTypeName: Puzzle1Manager, Assembly-CSharp
         m_MethodName: ChangeColour
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -702,19 +701,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &134203581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 134203576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dab9d48dfa8d445468736ca279bab0d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  correctColourIndex: 1
 --- !u!1 &163955552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,7 +1146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50220c061c5032438c644a185268305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: incorrect, try again
   fadeLength: 4
 --- !u!1 &386811060
 GameObject:
@@ -1211,19 +1196,7 @@ MonoBehaviour:
   changeColourOnActivation: 1
   OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1416841729}
-        m_TargetAssemblyTypeName: RiddleController, Assembly-CSharp
-        m_MethodName: OpenRiddle
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!60 &386811063
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3303,9 +3276,9 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 803033282}
-        m_TargetAssemblyTypeName: Button, Assembly-CSharp
-        m_MethodName: DebugEvent
+      - m_Target: {fileID: 1416841732}
+        m_TargetAssemblyTypeName: Puzzle1Manager, Assembly-CSharp
+        m_MethodName: CheckIfCorrect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3414,6 +3387,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  combinationState: 00000000000000000000000000000000
+  OnCorrect:
+    m_PersistentCalls:
+      m_Calls: []
+  OnIncorrect:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &892356795
 GameObject:
   m_ObjectHideFlags: 0
@@ -3982,7 +3962,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1008879819
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4631,7 +4611,6 @@ GameObject:
   - component: {fileID: 1144166163}
   - component: {fileID: 1144166162}
   - component: {fileID: 1144166161}
-  - component: {fileID: 1144166164}
   m_Layer: 0
   m_Name: 2FingersUp
   m_TagString: Untagged
@@ -4670,14 +4649,14 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1144166164}
-        m_TargetAssemblyTypeName: ColourPuzzle, Assembly-CSharp
+      - m_Target: {fileID: 1416841732}
+        m_TargetAssemblyTypeName: Puzzle1Manager, Assembly-CSharp
         m_MethodName: ChangeColour
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4759,19 +4738,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1144166164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1144166159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dab9d48dfa8d445468736ca279bab0d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  correctColourIndex: 3
 --- !u!1 &1185276402
 GameObject:
   m_ObjectHideFlags: 0
@@ -5444,6 +5410,7 @@ GameObject:
   - component: {fileID: 1416841729}
   - component: {fileID: 1416841731}
   - component: {fileID: 1416841732}
+  - component: {fileID: 1416841733}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -5512,15 +5479,82 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colourOptions:
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 0.7735849, g: 0.09122462, b: 0.17336059, a: 1}
+  - {r: 0, g: 0, b: 0.7075472, a: 1}
+  - {r: 0, g: 0.5188679, b: 0.22146805, a: 1}
   lockNumbers:
   - {fileID: 134203580}
   - {fileID: 1144166163}
   - {fileID: 2014536027}
   - {fileID: 1677183036}
+  combinationState: 00000000000000000000000000000000
+  OnCorrect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1416841729}
+        m_TargetAssemblyTypeName: RiddleController, Assembly-CSharp
+        m_MethodName: CloseRiddle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1416841729}
+        m_TargetAssemblyTypeName: RiddleController, Assembly-CSharp
+        m_MethodName: OpenText
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: RiddleController, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnIncorrect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1815419311}
+        m_TargetAssemblyTypeName: IncorrectText, Assembly-CSharp
+        m_MethodName: ShowMessage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1416841733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416841728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a94b8712c269884fb57327434461016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1436024999
 GameObject:
   m_ObjectHideFlags: 0
@@ -5858,7 +5892,6 @@ GameObject:
   - component: {fileID: 1677183036}
   - component: {fileID: 1677183035}
   - component: {fileID: 1677183034}
-  - component: {fileID: 1677183037}
   m_Layer: 0
   m_Name: 4FingersUp
   m_TagString: Untagged
@@ -5897,14 +5930,14 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1677183037}
-        m_TargetAssemblyTypeName: ColourPuzzle, Assembly-CSharp
+      - m_Target: {fileID: 1416841732}
+        m_TargetAssemblyTypeName: Puzzle1Manager, Assembly-CSharp
         m_MethodName: ChangeColour
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5986,19 +6019,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1677183037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1677183032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dab9d48dfa8d445468736ca279bab0d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  correctColourIndex: 0
 --- !u!1 &1705492708
 GameObject:
   m_ObjectHideFlags: 0
@@ -6461,7 +6481,7 @@ GameObject:
   - component: {fileID: 1815419310}
   - component: {fileID: 1815419309}
   m_Layer: 8
-  m_Name: Text (TMP)
+  m_Name: Incorrect Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6595,8 +6615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50220c061c5032438c644a185268305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: incorrect, try again
-  fadeLength: 4
+  fadeLength: 100
 --- !u!1 &1943646678
 GameObject:
   m_ObjectHideFlags: 0
@@ -6844,7 +6863,6 @@ GameObject:
   - component: {fileID: 2014536024}
   - component: {fileID: 2014536027}
   - component: {fileID: 2014536025}
-  - component: {fileID: 2014536028}
   - component: {fileID: 2014536026}
   m_Layer: 0
   m_Name: 3FingersUp
@@ -6884,14 +6902,14 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2014536028}
-        m_TargetAssemblyTypeName: ColourPuzzle, Assembly-CSharp
+      - m_Target: {fileID: 1416841732}
+        m_TargetAssemblyTypeName: Puzzle1Manager, Assembly-CSharp
         m_MethodName: ChangeColour
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6973,19 +6991,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2014536028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2014536023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dab9d48dfa8d445468736ca279bab0d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  correctColourIndex: 2
 --- !u!1 &2087777038
 GameObject:
   m_ObjectHideFlags: 0
