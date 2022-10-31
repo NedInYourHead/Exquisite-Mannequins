@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Puzzle1Manager : MonoBehaviour
+public class Puzzle2Manager : MonoBehaviour
 {
-    [SerializeField] private Color[] colourOptions = new Color[4];
-    [SerializeField] private SpriteRenderer[] lockNumbers = new SpriteRenderer[4];
-    
-    private int[] combinationState = new int[4];
-    private int[] correctState = { 1, 3, 0, 2 };
+    [SerializeField] private Transform[] hands = new Transform[2];
+
+    private int[] combinationState = new int[2];
+    private int[] correctState = {3, 11};
 
     private RiddleController riddleController;
 
@@ -25,14 +25,14 @@ public class Puzzle1Manager : MonoBehaviour
     {
         for (int i = 0; i < combinationState.Length; i++)
         {
-            combinationState[i] = 0;
-            lockNumbers[i].color = colourOptions[0];
+            combinationState[i] = Random.Range(0, 12);
+            hands[i].rotation = Quaternion.Euler(0f, 0f, -combinationState[i] * 30);
         }
     }
 
-    public void ChangeColour(int index)
+    public void MoveHand(int index)
     {
-        if (combinationState[index] < 3)
+        if (combinationState[index] < 11)
         {
             combinationState[index] += 1;
         }
@@ -40,7 +40,7 @@ public class Puzzle1Manager : MonoBehaviour
         {
             combinationState[index] = 0;
         }
-        lockNumbers[index].color = colourOptions[combinationState[index]];
+        hands[index].rotation = Quaternion.Euler(0f, 0f, -combinationState[index] * 30);
     }
 
     private bool CompareArrays(int[] array1, int[] array2)

@@ -9,12 +9,10 @@ public class RiddleController : MonoBehaviour
     [SerializeField] private GameObject[] riddleBoxes;
     [SerializeField] private GameObject[] answerBoxes;
     private int openUIIndex;
-    private Button darkScreenButton;
 
 
     private void Awake()
     {
-        darkScreenButton = darkScreen.GetComponent<Button>();
 
         for (int i = 0; i < riddleBoxes.Length + textBoxes.Length; i++)
         {
@@ -27,7 +25,7 @@ public class RiddleController : MonoBehaviour
     {
         openUIIndex = riddleIndex;
         darkScreen.SetActive(true);
-        darkScreenButton.enabled = true;
+        darkScreen.layer = 6;
         riddleBoxes[riddleIndex].SetActive(true);
         answerBoxes[riddleIndex].SetActive(true);
     }
@@ -36,7 +34,7 @@ public class RiddleController : MonoBehaviour
     {
         openUIIndex = riddleBoxes.Length + textIndex;
         darkScreen.SetActive(true);
-        darkScreenButton.enabled = false;
+        darkScreen.layer = 8;
         textBoxes[textIndex].SetActive(true);
     }
 
